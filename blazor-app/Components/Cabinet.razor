@@ -1,0 +1,26 @@
+<div style="text-align: center; font-family: sans-serif; color: #4a3b32; padding: 20px;">
+    <h2>Armário montado com componentes<br/>@FrameworkName</h2>
+    
+    <div style="position: relative; background-color: #d3a87c; border: 12px solid #643f25; border-radius: 8px; width: 340px; height: 400px; margin: 30px auto; display: flex; flex-direction: column; justify-content: space-evenly; box-sizing: border-box;">
+        <span style="position: absolute; top: -12px; left: -12px; background-color: rgba(0,0,0,0.7); color: white; font-size: 11px; padding: 2px 6px; border-radius: 3px; font-family: monospace; z-index: 10;">
+            &lt;Cabinet /&gt;
+        </span>
+        <Shelf />
+        
+        <div style="display: flex; justify-content: center; gap: 4px;">
+            <Door Side="left" />
+            <Door Side="right" />
+        </div>
+        
+        <Shelf />
+    </div>
+
+    <p style="max-width: 350px; margin: 0 auto; font-size: 18px; line-height: 1.4;">
+        Porta, Prateleira e Dobradica são componentes separados, reutilizados dentro de Armario.
+    </p>
+</div>
+
+@code {
+    [Parameter]
+    public string FrameworkName { get; set; } = "Blazor";
+}

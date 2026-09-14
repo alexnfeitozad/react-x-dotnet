@@ -1,0 +1,26 @@
+<div style="@GetStyle()" title="<Hinge />"></div>
+
+@code {
+    [Parameter]
+    public bool Top { get; set; }
+    
+    [Parameter]
+    public string Side { get; set; } = "left";
+
+    private string GetStyle()
+    {
+        var isLeft = Side == "left";
+        var verticalPosition = Top ? "top: 15%;" : "bottom: 15%;";
+        var horizontalPosition = isLeft ? "left: -6px;" : "right: -6px;";
+        
+        return $@"
+            width: 12px;
+            height: 24px;
+            background-color: #3b3a36;
+            border-radius: 2px;
+            position: absolute;
+            {verticalPosition}
+            {horizontalPosition}
+        ";
+    }
+}
