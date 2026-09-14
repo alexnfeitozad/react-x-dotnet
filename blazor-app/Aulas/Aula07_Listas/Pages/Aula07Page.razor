@@ -1,0 +1,21 @@
+@page "/aula07"
+<PageTitle>Aula 07 - Renderizando Listas</PageTitle>
+
+<div class="main-content">
+    <div class="modern-card" style="max-width: 600px; width: 100%; text-align: center; margin: 0 auto;">
+        <h2 style="color: #0f3460; margin-bottom: 15px;">Aula 07: Renderizando Listas</h2>
+        
+        <p style="color: #555; line-height: 1.6; margin-bottom: 30px;">
+            No Blazor, nós usamos o bom e velho <strong>
+                <code>@@foreach</code></strong>
+                 do C#! Ele é incrivelmente simples para pegar uma
+                  <code>List&lt;T&gt;</code>
+                   do Banco de Dados e repetir blocos de HTML na tela. E o atributo 
+                   <code>@@key</code> avisa o Blazor para não se perder se a lista mudar 
+                   de ordem.
+        </p>
+
+        <ListaTarefas />
+
+    </div>
+</div>

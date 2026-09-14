@@ -1,0 +1,35 @@
+<div class="modern-card" style="max-width: 400px; margin: 0 auto; text-align: left;">
+    <h3 style="color: #0f3460; border-bottom: 2px solid #eee; padding-bottom: 10px;">Minhas Tarefas</h3>
+    
+    <ul style="list-style: none; padding: 0;">
+        <!-- No Blazor, usamos um laço comum do C# para iterar sobre a lista -->
+        @foreach (var tarefa in Tarefas)
+        {
+            // @key é opcional no Blazor, mas é uma excelente prática para performance (assim como no React)
+            <li @key="tarefa.Id" 
+                style="padding: 12px 10px; border-bottom: 1px solid #f4f7f6; color: @(tarefa.Concluida ? "#aaa" : "#333"); text-decoration: @(tarefa.Concluida ? "line-through" : "none"); transition: all 0.3s;">
+                
+                @(tarefa.Concluida ? "✅" : "⏳") @tarefa.Texto
+            
+            </li>
+        }
+    </ul>
+</div>
+
+@code {
+    // Uma Lista comum do C# com objetos
+    private List<Tarefa> Tarefas = new()
+    {
+        new Tarefa { Id = 1, Texto = "Estudar React", Concluida = true },
+        new Tarefa { Id = 2, Texto = "Estudar Blazor", Concluida = false },
+        new Tarefa { Id = 3, Texto = "Criar um repositório no GitHub", Concluida = true },
+        new Tarefa { Id = 4, Texto = "Dominar o mundo", Concluida = false }
+    };
+
+    private class Tarefa
+    {
+        public int Id { get; set; }
+        public string Texto { get; set; } = "";
+        public bool Concluida { get; set; }
+    }
+}

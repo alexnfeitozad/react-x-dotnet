@@ -49,6 +49,12 @@ Dar vida à interface significa escutar o usuário e reagir.
   - **Blazor**: Usa variáveis C# comuns (`private bool Aberta = false;`). O motor do WebAssembly escuta os eventos e atualiza a tela automaticamente!
 - **Prática**: Criamos uma `<SmartDoor />` (Porta Inteligente). Ao clicar na maçaneta, a variável de estado muda, o CSS reage abrindo a porta com um efeito 3D e revela um texto interno.
 
+### 07. Renderizando Listas
+Mapear um Array de dados para transformar em elementos HTML.
+- **React**: Usa a função `array.map()` nativa do Javascript. É obrigatório passar a prop especial `key` no elemento iterado.
+- **Blazor**: Usa a estrutura de repetição C# `@foreach(var item in Lista)`. A diretiva `@key` é opcional, mas recomendada por questões de performance.
+- **Prática**: Construímos um componente `<ListaTarefas />` que renderiza ícones dinâmicos e risca o texto baseando-se no booleano `concluida`.
+
 ---
 
 ## 💡 Curiosidade: A Magia por trás do Blazor e React

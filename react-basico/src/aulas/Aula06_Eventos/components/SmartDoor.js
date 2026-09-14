@@ -41,19 +41,22 @@ export function SmartDoor() {
   return (
     <div style={{ padding: '40px' }}>
       <div style={estiloPorta}>
-        
+
         {/* A maçaneta tem o evento onClick que chama a nossa função */}
-        <div 
-          style={estiloMacaneta} 
+        <div
+          style={estiloMacaneta}
           onClick={alternarPorta}
           title="Clique para abrir/fechar!"
           onMouseEnter={(e) => e.target.style.backgroundColor = '#e94560'}
           onMouseLeave={(e) => e.target.style.backgroundColor = '#3b3a36'}
         ></div>
-        
+
         {/* Mostra um texto apenas se a porta estiver aberta */}
         {aberta && (
-          <div style={{ position: 'absolute', width: '100%', textAlign: 'center', top: '130px', fontWeight: 'bold', color: '#643f25', transform: 'rotateY(70deg)' }}>
+          <div style={{
+            position: 'absolute', width: '100%',
+            textAlign: 'center', top: '130px', fontWeight: 'bold', color: '#643f25', transform: 'rotateY(70deg)'
+          }}>
             Narnia! 🦁
           </div>
         )}
