@@ -1,19 +1,10 @@
-<div style="background-color: white; padding: 30px; border-radius: 10px; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
-    <h2 style="color: #333;">Aula 03: Regras do Razor</h2>
-    <p>Diferente do JSX, o Razor é mais frouxo e permite tags HTML normais (sem precisar fechar as vazias).</p>
+<form class="modern-card" style="max-width: 400px; width: 100%;">
+    <h2 style="color: #0f3460; margin-bottom: 20px;">Meu Primeiro Formulário</h2>
     
-    <form style="display: flex; flex-direction: column; gap: 15px;">
-        <div class="grupo-input">
-            <label style="display: block; margin-bottom: 5px;">Nome:</label>
-            <!-- No Blazor usamos 'class' normal e a tag <input> não precisa ser fechada obrigatoriamente como no JSX -->
-            <input type="text" placeholder="Seu nome" style="padding: 8px; width: 100%;">
-        </div>
-
-        <button type="button" style="padding: 10px; background-color: #ba885a; color: white; border: none; cursor: pointer;">
-            Enviar
-        </button>
-    </form>
-</div>
-
-@code {
-}
+    <label for="nome" style="display: block; margin-bottom: 8px; font-weight: 600; color: #555;">Nome:</label>
+    <input type="text" id="nome" class="nomeInput" style="width: 100%; padding: 12px; border: 1px solid #ddd; border-radius: 6px; margin-bottom: 20px;" />
+    
+    <button style="width: 100%; padding: 12px; background-color: #e94560; color: white; border: none; border-radius: 6px; font-weight: bold; cursor: pointer; transition: background 0.3s;">
+        Salvar Dados
+    </button>
+</form>

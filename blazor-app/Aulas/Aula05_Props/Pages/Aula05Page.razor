@@ -1,0 +1,21 @@
+@page "/aula05"
+<PageTitle>Aula 05 - Passando Props</PageTitle>
+
+<div class="main-content">
+    <div style="display: flex; flex-direction: column; align-items: center;">
+        <h2 style="margin-bottom: 20px; color: #4a3b32;">Aula 05: Passando Parâmetros</h2>
+        
+        <p style="margin-bottom: 30px; text-align: center; max-width: 400px;">
+            O mesmo componente (Fábrica) criando 3 produtos totalmente diferentes baseado nas informações (Parameters) que foram passadas para ele!
+        </p>
+
+        <div style="display: flex; gap: 20px;">
+            <!-- Passando Parameters estáticos e numéricos/booleanos -->
+            <CardProduto Nome="Cadeira de Madeira" Preco="150.00" EmDestaque="false" />
+            
+            <CardProduto Nome="Mesa de Jantar" Preco="890.50" EmDestaque="true" />
+            
+            <CardProduto Nome="Prateleira Simples" Preco="45.90" EmDestaque="false" />
+        </div>
+    </div>
+</div>
