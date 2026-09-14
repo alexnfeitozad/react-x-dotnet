@@ -6,10 +6,11 @@ import { Aula04Page as Aula04 } from './aulas/Aula04_Chaves/pages/Aula04Page';
 import { Aula05Page as Aula05 } from './aulas/Aula05_Props/pages/Aula05Page';
 import { Aula06Page as Aula06 } from './aulas/Aula06_Eventos/pages/Aula06Page';
 import { Aula07Page as Aula07 } from './aulas/Aula07_Listas/pages/Aula07Page';
+import { Aula08Page as Aula08 } from './aulas/Aula08_Puros/pages/Aula08Page';
 import './App.css';
 
 function App() {
-  const [aula, setAula] = useState(7); // Abrir a Aula 07 por padrão
+  const [aula, setAula] = useState(8); // Abrir a Aula 08 por padrão
 
   return (
     <div className="app-container">
@@ -23,6 +24,7 @@ function App() {
           <li><button className={`menu-btn ${aula === 5 ? 'active' : ''}`} onClick={() => setAula(5)}>Aula 05 - Props</button></li>
           <li><button className={`menu-btn ${aula === 6 ? 'active' : ''}`} onClick={() => setAula(6)}>Aula 06 - Eventos/State</button></li>
           <li><button className={`menu-btn ${aula === 7 ? 'active' : ''}`} onClick={() => setAula(7)}>Aula 07 - Listas</button></li>
+          <li><button className={`menu-btn ${aula === 8 ? 'active' : ''}`} onClick={() => setAula(8)}>Aula 08 - Comp. Puros</button></li>
         </ul>
       </nav>
       <main className="main-content">
@@ -33,6 +35,7 @@ function App() {
         {aula === 5 && <Aula05 />}
         {aula === 6 && <Aula06 />}
         {aula === 7 && <Aula07 />}
+        {aula === 8 && <Aula08 />}
       </main>
     </div>
   );

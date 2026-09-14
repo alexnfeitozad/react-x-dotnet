@@ -55,6 +55,12 @@ Mapear um Array de dados para transformar em elementos HTML.
 - **Blazor**: Usa a estrutura de repetição C# `@foreach(var item in Lista)`. A diretiva `@key` é opcional, mas recomendada por questões de performance.
 - **Prática**: Construímos um componente `<ListaTarefas />` que renderiza ícones dinâmicos e risca o texto baseando-se no booleano `concluida`.
 
+### 08. Mantendo seus Componentes Puros
+Arquitetura fundamental: Processos de renderização não devem causar Side-Effects.
+- **React**: O `<React.StrictMode>` no ambiente de desenvolvimento re-renderiza seus componentes de forma duplicada propositalmente. Se o seu componente altera variáveis externas (impuro), o número da tela vai ser exibido como `2, 4, 6` ao invés de `1, 2, 3`, evidenciando o bug imediatamente!
+- **Blazor**: Renderizações impuras (alterar estado global estático durante a construção do HTML) funcionam na primeira carga, mas corrompem os dados silenciosamente ao navegar entre telas.
+- **Prática**: Criamos um `<CopoImpuro />` que auto-incrementa uma variável global errada e um `<CopoPuro />` protegido arquiteturalmente por parâmetros (Props).
+
 ---
 
 ## 💡 Curiosidade: A Magia por trás do Blazor e React

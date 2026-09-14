@@ -1,0 +1,31 @@
+@if (Impuro)
+{
+    // ISSO É UM ERRO ARQUITETURAL!
+    // Modificar um estado global / externo durante o processo de renderização (HTML)
+    // pode causar efeitos colaterais imprevisíveis e difíceis de rastrear na sua aplicação.
+    ContadorGlobal++;
+    
+    <div class="modern-card" style="padding: 20px; margin: 10px; text-align: center; background-color: #ffebee;">
+        <h4 style="color: #c62828; margin: 0;">Copo de Chá (Impuro) #@ContadorGlobal</h4>
+    </div>
+}
+else
+{
+    // CORRETO!
+    // Recebemos a Prop (Parameter) e renderizamos puramente com base nela.
+    // Nada fora do componente é alterado.
+    <div class="modern-card" style="padding: 20px; margin: 10px; text-align: center; background-color: #e0f7fa;">
+        <h4 style="color: #00796b; margin: 0;">Copo de Chá (Puro) #@Convidado</h4>
+    </div>
+}
+
+@code {
+    // Simulando uma variável externa ou global (Static)
+    private static int ContadorGlobal = 0;
+
+    [Parameter]
+    public bool Impuro { get; set; } = false;
+
+    [Parameter]
+    public int Convidado { get; set; } = 0;
+}

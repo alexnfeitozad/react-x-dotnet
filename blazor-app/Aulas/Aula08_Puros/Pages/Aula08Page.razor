@@ -1,0 +1,29 @@
+@page "/aula08"
+<PageTitle>Aula 08 - Componentes Puros</PageTitle>
+
+<div class="main-content">
+    <div class="modern-card" style="max-width: 800px; width: 100%; text-align: center; margin: 0 auto;">
+        <h2 style="color: #0f3460; margin-bottom: 15px;">Aula 08: Mantendo Componentes Puros</h2>
+        
+        <p style="color: #555; line-height: 1.6; margin-bottom: 30px;">
+            Assim como no React, no Blazor devemos evitar modificar variáveis globais (ou injetar dependências que causam efeitos colaterais de estado) no meio da árvore de renderização do Razor. O trabalho do HTML (mesmo com C#) é <strong>apenas desenhar a tela</strong>, nunca calcular regras de negócio misteriosas nos bastidores.
+        </p>
+
+        <div style="display: flex; justify-content: space-around; flex-wrap: wrap;">
+            <div style="flex: 1; min-width: 300px;">
+                <h3 style="color: #c62828;">Forma Impura ❌</h3>
+                <Copo Impuro="true" />
+                <Copo Impuro="true" />
+                <Copo Impuro="true" />
+            </div>
+
+            <div style="flex: 1; min-width: 300px;">
+                <h3 style="color: #00796b;">Forma Pura ✅</h3>
+                <Copo Convidado="1" />
+                <Copo Convidado="2" />
+                <Copo Convidado="3" />
+            </div>
+        </div>
+
+    </div>
+</div>
