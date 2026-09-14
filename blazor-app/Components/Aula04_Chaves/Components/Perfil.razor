@@ -1,0 +1,32 @@
+<div style="background-color: white; padding: 30px; border-radius: 10px; text-align: center; box-shadow: 0 4px 6px rgba(0,0,0,0.1);">
+    <h2 style="color: #333;">Aula 04: C# no Razor ( @@ )</h2>
+    
+    <!-- Injetando atributos com @@ -->
+    <img src="@Usuario.Avatar" alt="Avatar" style="width: 100px; height: 100px; border-radius: 50%;">
+    
+    <!-- Injetando texto com @@ -->
+    <h3 style="margin: 10px 0 5px 0; color: #643f25;">@Usuario.Nome</h3>
+    <p style="margin: 0; color: gray;">@Usuario.Cargo</p>
+    
+    <div style="margin-top: 20px; font-size: 12px; color: #999;">
+        Acessado em: @DataAtual
+    </div>
+</div>
+
+@code {
+    public string DataAtual = DateTime.Now.ToShortDateString();
+
+    public UserInfo Usuario = new UserInfo 
+    { 
+        Nome = "Alex Feitoza", 
+        Avatar = "https://github.com/alexnfeitozad.png", 
+        Cargo = "Desenvolvedor" 
+    };
+
+    public class UserInfo
+    {
+        public string Nome { get; set; } = "";
+        public string Avatar { get; set; } = "";
+        public string Cargo { get; set; } = "";
+    }
+}
