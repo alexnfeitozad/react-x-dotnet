@@ -1,0 +1,75 @@
+<div style="padding: 40px;">
+    <div style="@GetEstiloPorta()">
+        
+        <!-- A maçaneta tem o evento @onclick que chama o método C# -->
+        <div style="@GetEstiloMacaneta()" 
+             @onclick="AlternarPorta" 
+             title="Clique para abrir/fechar!"
+             @onmouseover="OnMouseOver"
+             @onmouseout="OnMouseOut">
+        </div>
+
+        @if (Aberta)
+        {
+            <div style="position: absolute; width: 100%; text-align: center; top: 130px; font-weight: bold; color: #643f25; transform: rotateY(70deg);">
+                Narnia! 🦁
+            </div>
+        }
+
+    </div>
+</div>
+
+@code {
+    // Estado do componente
+    private bool Aberta = false;
+    private bool IsHovered = false;
+
+    // Função engatilhada pelo clique
+    private void AlternarPorta()
+    {
+        Aberta = !Aberta;
+    }
+
+    private void OnMouseOver() => IsHovered = true;
+    private void OnMouseOut() => IsHovered = false;
+
+    // Métodos auxiliares para gerar os estilos
+    private string GetEstiloPorta()
+    {
+        string bg = Aberta ? "#f5deb3" : "#ba885a";
+        string transform = Aberta ? "perspective(1000px) rotateY(-70deg)" : "perspective(1000px) rotateY(0deg)";
+        string shadow = Aberta ? "20px 10px 20px rgba(0,0,0,0.2)" : "5px 5px 15px rgba(0,0,0,0.3)";
+
+        return $@"
+            width: 180px; 
+            height: 320px; 
+            background-color: {bg}; 
+            border: 4px solid #643f25; 
+            border-radius: 4px; 
+            position: relative; 
+            transition: all 0.6s ease-in-out; 
+            transform-origin: left center; 
+            transform: {transform}; 
+            box-shadow: {shadow}; 
+            margin: 0 auto;
+        ";
+    }
+
+    private string GetEstiloMacaneta()
+    {
+        string color = IsHovered ? "#e94560" : "#3b3a36";
+        return $@"
+            position: absolute; 
+            right: 10px; 
+            top: 50%; 
+            width: 12px; 
+            height: 50px; 
+            background-color: {color}; 
+            border-radius: 6px; 
+            cursor: pointer; 
+            transform: translateY(-50%); 
+            box-shadow: 2px 2px 5px rgba(0,0,0,0.4); 
+            transition: background-color 0.2s;
+        ";
+    }
+}

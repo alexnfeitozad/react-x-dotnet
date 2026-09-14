@@ -1,0 +1,17 @@
+@page "/aula06"
+<PageTitle>Aula 06 - Eventos e Estado</PageTitle>
+
+<div class="main-content">
+    <div class="modern-card" style="max-width: 600px; width: 100%; text-align: center; margin: 0 auto;">
+        <h2 style="color: #0f3460; margin-bottom: 15px;">Aula 06: Eventos e Estado (State)</h2>
+        
+        <p style="color: #555; line-height: 1.6; margin-bottom: 30px;">
+            No Blazor, usamos <strong>@@onclick</strong> para interceptar o clique e rodar um método em C#. E a melhor parte: o Blazor sabe que as variáveis mudaram e automaticamente re-renderiza o HTML (nós não precisamos de <code>useState</code>)!
+            <br/><br/>
+            <strong>Desafio:</strong> Clique na maçaneta abaixo para abrir a porta!
+        </p>
+
+        <SmartDoor />
+
+    </div>
+</div>

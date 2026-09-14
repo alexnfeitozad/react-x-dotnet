@@ -35,6 +35,20 @@ A força de um framework web é poder renderizar dados dinâmicos no meio da tel
 - **Blazor**: Usa a arroba `@`. Ex: `<img src="@Usuario.Avatar" />` ou `<h3>@Usuario.Nome</h3>`.
 - **Cuidado no Razor**: O símbolo `@` é reservado. Para digitar um "arroba" como texto normal no HTML, é necessário usar duplo arroba: `@@`.
 
+### 05. Passando Props para um Componente
+Até a Aula 04, os nossos componentes eram estáticos. As **Props** (propriedades / parâmetros) resolvem isso, permitindo passar informações "de fora para dentro" como se fossem configurações daquele componente.
+- **React**: As props chegam como um objeto nos argumentos da função (geralmente desestruturadas). Ex: `export function CardProduto({ nome, preco, emDestaque })`.
+- **Blazor**: As props são propriedades da Classe C# marcadas com o atributo `[Parameter]`. Ex: `[Parameter] public string Nome { get; set; }`.
+- **Prática**: Criamos uma única fábrica de `<CardProduto />` e, na página principal, renderizamos três produtos totalmente diferentes apenas mudando as props que foram passadas para eles. Um deles, usando a prop boleana `emDestaque`, até mudou de cor e ganhou uma etiqueta!
+
+### 06. Eventos e Estado (State)
+Dar vida à interface significa escutar o usuário e reagir.
+- **Eventos de Clique**: No React usamos `onClick={funcao}`, enquanto no Blazor usamos `@onclick="Metodo"`.
+- **Estado (State)**: É a "memória" que causa uma re-renderização visual.
+  - **React**: Usa o Hook `useState` para criar um estado rastreável e uma função modificadora (`const [aberta, setAberta] = useState(false)`).
+  - **Blazor**: Usa variáveis C# comuns (`private bool Aberta = false;`). O motor do WebAssembly escuta os eventos e atualiza a tela automaticamente!
+- **Prática**: Criamos uma `<SmartDoor />` (Porta Inteligente). Ao clicar na maçaneta, a variável de estado muda, o CSS reage abrindo a porta com um efeito 3D e revela um texto interno.
+
 ---
 
 ## 💡 Curiosidade: A Magia por trás do Blazor e React
